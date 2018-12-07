@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+<style>
+    .filterDiv {
+  float: left;
+  background-color: #2196F3;
+  color: #ffffff;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+  margin: 2px;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.container {
+  overflow: hidden;
+}
+
+/* Style the buttons */
+.btn {
+    margin-top: 20px;
+    margin-left: 8px;
+  border: none;
+  outline: none;
+  padding: 7px 12px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #6600ff;
+  color: white;
+}
+
+.btn.one {
+  background-color: #6600ff;
+  color: white;
+}
+
+
+.btn.six, .btn.six:focus {
+    background-color: white;
+    color:black;
+    border-style: solid;
+    border-width: 2px;
+    border-color: purple;
+     height:35px;
+    width:100px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 8px;
+    margin-bottom: 20px;
+  border: none;
+  outline: none;
+  padding: 12px 12px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+    display: none;
+   padding-top: 10px;
+   padding-left: 4px;
+   padding-right: 4px;
+    background: white;
+    text-align: center;
+    box-shadow: 0px 1px 5px #555;
+    border-radius: 5px; 
+}
+
+/* The slider itself */
+.slider {
+
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+   height: 15px;
+    border-radius: 5px; 
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 20px; /* Set a specific slider handle width */
+    height: 20px; /* Slider handle height */
+    background: #6600ff; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 50%; 
+}
+
+.slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #4CAF50; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 50%;
+}
+
+.boxed {
+  width: 200px;
+  position: absolute;
+  margin-left: 450px;
+  display: grid;
+  column-gap: 10px;
+  grid-auto-flow: column;
+   grid-template-rows: 1fr 4fr;
+}
+.boxed2 {
+  width: 300px;
+  height: 100
+  position: absolute;
+  
+}
+
+
+
+
+</style>
+<head>
+	
+<body>
+<h3>Events on Sunday December 2</h3>
+
+
+
+ <div >
+
+    <div class="boxed">
+        
+<button onclick="myFunction()" class="btn six"><font color="black" size ="4"><b> Miles</b></font></button>
+<div class="w3-panel"> 
+  <div id = "myDropdown" class="slidecontainer" align="left">
+    <font color="black" size ="3">Max miles</font>
+    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+    
+    <p><span id="demo"> Miles</span></p>
+    <script>
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+
+</script>
+
+
+  
+</div>
+</div>
+
+
+
+
+
+<button onclick="myFunction2()" class="btn six"><font color="black" size ="4"><b> Price</b></font></button>
+<div class="w3-panel"> 
+  <div id = "myDropdown2" class="slidecontainer" align="left">
+    
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    $(function() {
+      $("#slider-range").slider({
+        range: true,
+        min: 0,
+        max: 300,
+        values: [0, 100],
+        slide: function(event, ui) {
+          $("#amount_min").val(ui.values[0]);
+          $("#amount_max").val(ui.values[1]);
+        }
+      });
+      $("#amount_min").val($("#slider-range").slider("values", 0));
+      $("#amount_max").val($("#slider-range").slider("values", 1));
+      $("#amount_min").change(function() {
+        $("#slider-range").slider("values", 0, $(this).val());
+      });
+      $("#amount_max").change(function() {
+        $("#slider-range").slider("values", 1, $(this).val());
+      })
+    });
+  </script>
+  <div id="slider-range"></div>
+  <p>
+    <font color="black"size ="3" align="left"><b>Price range:</b></font>
+    </p>
+     <font color="black"size ="2" align="left">$</font><input type="text" id="amount_min" size="1 "style="border:0; color:black; font-weight:bold;">
+     <font color="black"size ="2" align="left">$</font><input type="text" size="1" id="amount_max" style="border:0; color:black; font-weight:bold;">
+  
+
+
+  
+</div>
+</div>
+</div>
+
+
+
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function myFunction2() {
+    document.getElementById("myDropdown2").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.btn.six')) {
+
+    var dropdowns = document.getElementsByClassName("slidecontainer");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+
+
+  <button class="btn active" onclick="filterSelection('all')"><font color="white" size ="4"><b> Show all </b></font></button>
+  <button class="btn one" onclick="filterSelection('art')"><font color="white"size ="4"><b> Art/Film </b></font></button>
+  <button class="btn one" onclick="filterSelection('competition')"><font color="white"size ="4"><b>  Competition</b></font></button>
+  <button class="btn one" onclick="filterSelection('food')"><font color="white"size ="4"><b>  Food/Drink</b></font></button>
+  <button class="btn one" onclick="filterSelection('free')"><font color="white"size ="4"><b> Free</b></font></button>
+  <button class="btn one" onclick="filterSelection('kid')"><font color="white"size ="4"><b>  Kid Friendly</b></font></button>
+</div>
+
+<section class="card-container classes">
+    <article class="card art kid competition">
+        
+        <figure class="card__thumbnail">
+            <img src="cello.jpg">
+        </figure>
+        <main class="card__description">
+            Professional Cello Lessons and Practice
+        </main>
+        <span >
+        	$95 |
+            </span>
+        <span>
+        	Long Beach
+        
+        </span>
+        
+        
+
+    </article>
+    <article class="card art competition kid">
+        <figure class="card__thumbnail">
+            <img src="archery.jpg">
+        </figure>
+        <main class="card__description">
+            archery classes in los angeles
+        </main>
+        <span>
+            $1 |
+        <span>
+           Los Angeles
+        </span>
+        </span>
+    </article>
+    <article class="card food">
+        <figure class="card__thumbnail">
+            <img src="boat.jpg">
+        </figure>
+        <main class="card__description">
+            Huge Holiday Christmas Party!!
+        </main>
+        <span>
+            $50 |
+        <span>
+            Simi Valley
+        </span>
+        </span>
+    </article>
+    <article class="card art competition">
+        <figure class="card__thumbnail">
+            <img src="therapy.jpg">
+        </figure>
+        <main class="card__description">
+            Sports Therapy & Rehabiliation
+        </main>
+        <span>
+            $200 |
+        <span>
+            Long Beach
+        </span>
+        </span>
+    </article>
+    <article class="card competition kid art">
+        <figure class="card__thumbnail">
+            <img src="basketball.jpg">
+        </figure>
+        <main class="card__description">
+            Coach Mike's Private Basketball Training Lessons 
+        </main>
+        <span>
+            $40 |
+        <span>
+            Pasedena
+        </span>
+        </span>
+    </article>
+    <article class="card art free kid food">
+        <figure class="card__thumbnail">
+            <img src="retreat.jpg">
+        </figure>
+        <main class="card__description">
+            Shambhala Training Weekend Retreat 
+        </main>
+        <span>
+            Free |
+        <span>
+            Grand View Blvd, Mar Vista
+        </span>
+        </span>
+    </article>
+    <article class="card free art kid competition">
+        <figure class="card__thumbnail">
+            <img src="dancing.jpg">
+        </figure>
+        <main class="card__description">
+            Silk Veil Beginner Dancing Event
+        </main>
+        <span>
+            Free |
+        <span>
+           Long Beach
+        </span>
+        </span>
+    </article>
+    <article class="card competition food free">
+        <figure class="card__thumbnail">
+            <img src="training.jpg">
+        </figure>
+        <main class="card__description">
+            Personal Training & Nutrition Planning
+        </main>
+        <span>
+            $75 |
+        <span>
+            Huntington Beach
+        </span>
+        </span>
+    </article>
+     <article class="card food free">
+        <figure class="card__thumbnail">
+            <img src="karaoke.jpg">
+        </figure>
+        <main class="card__description">
+            Best Karaoke 2018 Tuesdays @ Bigs Bar & Grill
+        </main>
+        <span >
+            Free |
+        <span>
+            Fullerton
+        </span>
+        </span>
+    </article>
+    <article class="card art free">
+        <figure class="card__thumbnail">
+            <img src="carolers.jpg">
+        </figure>
+        <main class="card__description">
+            Christmas carolers singing group
+        </main>
+        <span>
+            Free |
+        <span>
+            Orange
+        </span>
+        </span>
+    </article>
+    <article class="card art kid">
+        <figure class="card__thumbnail">
+            <img src="airballoon.jpg">
+        </figure>
+        <main class="card__description">
+            Hot Air Baloon Rides!
+        </main>
+        <span>
+            $200 |
+        <span>
+            Temecula
+        </span>
+        </span>
+    </article>
+    <article class="card art free food">
+        <figure class="card__thumbnail">
+            <img src="camping.jpg">
+        </figure>
+        <main class="card__description">
+            Camping get away!
+        </main>
+        <span>
+            Free |
+        <span>
+            Pauma Valley
+        </span>
+        </span>
+    </article>
+    <article class="card art kid">
+        <figure class="card__thumbnail">
+            <img src="photoshop.jpg">
+        </figure>
+        <main class="card__description">
+            Photoshop and adobe lessons
+        </main>
+        <span>
+            $60 |
+        <span>
+            Seal Beach
+        </span>
+        </span>
+    </article>
+    <article class="card art food kid">
+        <figure class="card__thumbnail">
+            <img src="chef.jpg">
+        </figure>
+        <main class="card__description">
+            COREA.Consulting LLC Personal Chef
+        </main>
+        <span>
+            $300 |
+        <span>
+            Compton
+        </span>
+        </span>
+    </article>
+    <article class="card art competition kid">
+        <figure class="card__thumbnail">
+            <img src="horses.jpg">
+        </figure>
+        <main class="card__description">
+            Personal Horse Back Riding Lesson
+        </main>
+        <span>
+            $400 |
+        <span>
+            Whittier
+        </span>
+        </span>
+    </article>
+    <article class="card ">
+        <figure class="card__thumbnail">
+            <img src="healthcare.jpg">
+        </figure>
+        <main class="card__description">
+            Healthcare Course in Riverside
+        </main>
+        <span>
+            $100 |
+        <span>
+            Riverside
+        </span>
+        </span>
+    </article>
+</section>
+
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("card");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+
+
+<div class="pagination" style="padding-top: 100px;">
+  <a href="#">&laquo;</a>
+  <a href="#">1</a>
+  <a href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&raquo;</a>
+</div>
+
+
+</body>
+<html>

@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1,
+            shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous">
+        <!-- Font Awesome -->
+        <link rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+            integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+            crossorigin="anonymous">
+        <!-- CSS Stylesheet -->
+        <link rel="stylesheet" href="styleSheet.css">
+
+        <title>Today's Events</title>
+    </head>
+
+    <body>
+        <!--Top Of Page-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html" id="brandTitle">
+                <h1><i class="fas fa-peace"></i> Craigslist</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="https://accounts.craigslist.org/login?rt=L&rp=%2Flogin%2Fhome">Login
+                            |
+                            Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="https://post.craigslist.org/k/nm6nhDnz6BGOnoSZ9UU-qg/Zxzmx?s=type">Create
+                            a Post</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="event.html">Today's Events</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#"
+                            id="navbarDropdown" role="button"
+                            data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"> Location
+                        </a>
+                        <div class="dropdown-menu scrollable-menu"
+                            aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item"
+                                href="//bakersfield.craigslist.org/">Bakersfield</a>
+                            <a class="dropdown-item"
+                                href="//flagstaff.craigslist.org/">Flagstaff</a>
+                            <a class="dropdown-item"
+                                href="//fresno.craigslist.org/">Fresno</a>
+                            <a class="dropdown-item"
+                                href="//goldcountry.craigslist.org/">Gold
+                                Country</a>
+                            <a class="dropdown-item"
+                                href="//hanford.craigslist.org/">Hanford</a>
+                            <a class="dropdown-item"
+                                href="//imperial.craigslist.org/">Imperial co</a>
+                            <a class="dropdown-item"
+                                href="//inlandempire.craigslist.org/">Inland
+                                Empire</a>
+                            <a class="dropdown-item"
+                                href="//lasvegas.craigslist.org/">Las Vegas</a>
+                            <a class="dropdown-item"
+                                href="//losangeles.craigslist.org/">Los Angeles</a>
+                            <a class="dropdown-item"
+                                href="//merced.craigslist.org/">Merced</a>
+                            <a class="dropdown-item"
+                                href="//modesto.craigslist.org/">Modesto</a>
+                            <a class="dropdown-item"
+                                href="//mohave.craigslist.org/">Mohave County</a>
+                            <a class="dropdown-item"
+                                href="//monterey.craigslist.org/">Monterey</a>
+                            <a class="dropdown-item"
+                                href="//palmsprings.craigslist.org/">Palm
+                                Springs</a>
+                            <a class="dropdown-item"
+                                href="//phoenix.craigslist.org/">Phoenix</a>
+                            <a class="dropdown-item"
+                                href="//prescott.craigslist.org/">Prescott</a>
+                            <a class="dropdown-item"
+                                href="//reno.craigslist.org/">Reno</a>
+                            <a class="dropdown-item"
+                                href="//sacramento.craigslist.org/">Sacramento</a>
+                            <a class="dropdown-item"
+                                href="//sandiego.craigslist.org/">San Diego</a>
+                            <a class="dropdown-item"
+                                href="//slo.craigslist.org/">San Luis Obispo</a>
+                            <a class="dropdown-item"
+                                href="//santabarbara.craigslist.org/">Santa
+                                Barbara</a>
+                            <a class="dropdown-item"
+                                href="//santamaria.craigslist.org/">Santa Maria</a>
+                            <a class="dropdown-item"
+                                href="//sfbay.craigslist.org/">SF Bay Area</a>
+                            <a class="dropdown-item"
+                                href="//stgeorge.craigslist.org/">St George</a>
+                            <a class="dropdown-item"
+                                href="//stockton.craigslist.org/">Stockton</a>
+                            <a class="dropdown-item"
+                                href="//tijuana.craigslist.com.mx/">Tijuana</a>
+                            <a class="dropdown-item"
+                                href="//tucson.craigslist.org/">Tucson</a>
+                            <a class="dropdown-item"
+                                href="//ventura.craigslist.org/">Ventura</a>
+                            <a class="dropdown-item"
+                                href="//visalia.craigslist.org/">Visalia-Tulare</a>
+                            <a class="dropdown-item"
+                                href="//yuma.craigslist.org/">Yuma</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-m-2" type="search"
+                        placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-m-0"
+                        type="submit" id="searchButton">Search</button>
+                </form>
+            </div>
+        </nav>
+
+        <!--Filters-->
+
+        <ul class="nav justify-content-left filters">
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">December 11, 2018</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown"
+                    href="#" role="button" aria-haspopup="true"
+                    aria-expanded="false">Topic</a>
+                <div class="dropdown-menu scrollable-menu">
+                    <a class="dropdown-item" href="#">Arts</a>
+                    <a class="dropdown-item" href="#">Competition</a>
+                    <a class="dropdown-item" href="#">Entertainment</a>
+                    <a class="dropdown-item" href="#">Food and Drink</a>
+                    <a class="dropdown-item" href="#">Friendship</a>
+                    <a class="dropdown-item" href="#">Helping</a>
+                    <a class="dropdown-item" href="#">Insurance</a>
+                    <a class="dropdown-item" href="#">Singing</a>
+                    <a class="dropdown-item" href="#">Sport</a>
+                    <a class="dropdown-item" href="#">Technology</a>
+                    <a class="dropdown-item" href="#">Transportation</a>
+                    <a class="dropdown-item" href="#">Zumba</a>
+                </div>
+            </li>
+        </ul>
+
+        <!--Listing-->
+        <div class="card-columns">
+            <div class="card events">
+                <img class="card-img-top" src="airballoon.jpg" alt="Card image
+                    cap">
+                <div class="card-body">
+                    <h5 class="card-title">Tipsy in the Air</h5>
+                    <p class="card-text">Ride in a Hot Air Balloon
+                    </p>
+                    <span>
+                        $95 |
+                    </span>
+                    <span>
+                        Long Beach
+
+                    </span>
+                </div>
+            </div>
+            <div class="card events">
+                <img class="card-img-top" src="archery.jpg" alt="Card image
+                    cap">
+                <div class="card-body">
+                    <h5 class="card-title">Archery Class</h5>
+                    <p class="card-text">Archery Classes in LA</p>
+                    <span>
+                        $1 |
+                        <span>
+                            Los Angeles
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="card events">
+                <img class="card-img-top" src="basketball.jpg" alt="Card image
+                    cap">
+                <div class="card-body">
+                    <h5 class="card-title">Basketball Game</h5>
+                    <p class="card-text">We are doing a game of pickup
+                        basketball for ages 21-60. And now
+                        we are writing text to take up space and show how the
+                        boxes don't look messed up.
+                    </p>
+                    <span>
+                        $50 |
+                        <span>
+                            Simi Valley
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="card events">
+                <img class="card-img-top" src="boat.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">A Ferry Ride</h5>
+                    <p class="card-text">Be merry on this ferry.</p>
+                    <span>
+                        $50 |
+                        <span>
+                            Huntington Beach
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="card events">
+                <img class="card-img-top" src="camping.jpg" alt="Card image
+                    cap">
+                <div class="card-body">
+                    <h5 class="card-title">COME CAMPING</h5>
+                    <p class="card-text">It'll be fun they said...</p>
+                    <span>
+                        $50 |
+                        <span>
+                            Long Beach
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="card events">
+                <img class="card-img-top" src="carolers.jpg" alt="Card image
+                    cap">
+                <div class="card-body">
+                    <h5 class="card-title">Be annoying with us! Spread Cheer.</h5>
+                    <p class="card-text">It'll be fun they said...</p>
+                    <span>
+                        $50 |
+                        <span>
+                            Long Beach
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="card events">
+                <img class="card-img-top" src="cello.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Carry a heavy instrument</h5>
+                    <p class="card-text">It'll be fun they said...</p>
+                    <span>
+                        $50 |
+                        <span>
+                            Long Beach
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="card events">
+                <img class="card-img-top" src="chef.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Make Food You Can't Eat</h5>
+                    <p class="card-text">It'll be fun they said...</p>
+                    <span>
+                        $50 |
+                        <span>
+                            Long Beach
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="card events">
+                <img class="card-img-top" src="dancing.jpg" alt="Card image
+                    cap">
+                <div class="card-body">
+                    <h5 class="card-title">Learn Rythm</h5>
+                    <p class="card-text">It'll be fun they said...</p>
+                    <span>
+                        $50 |
+                        <span>
+                            Long Beach
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="card events">
+                <img class="card-img-top" src="healthcare.jpg" alt="Card image
+                    cap">
+                <div class="card-body">
+                    <h5 class="card-title">It's NOT Affordable</h5>
+                    <p class="card-text">It'll be fun they said...</p>
+                    <span>
+                        $50 |
+                        <span>
+                            Long Beach
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="card events">
+                <img class="card-img-top" src="horses.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Horsies</h5>
+                    <p class="card-text">It'll be fun they said...</p>
+                    <span>
+                        $50 |
+                        <span>
+                            Long Beach
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="card events">
+                <img class="card-img-top" src="karaoke.jpg" alt="Card image
+                    cap">
+                <div class="card-body">
+                    <h5 class="card-title">Karaoke with Strangers</h5>
+                    <p class="card-text">Be even more disliked.</p>
+                    <span>
+                        $1500 |
+                        <span>
+                            Long Beach
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="card events">
+                <img class="card-img-top" src="photoshop.jpg" alt="Card image
+                    cap">
+                <div class="card-body">
+                    <h5 class="card-title">Learn to Photoshop</h5>
+                    <p class="card-text">Make a christmas card your family will
+                        actually enjoy. Make sure you include some
+                        dogs.</p>
+                    <span>
+                        $50 |
+                        <span>
+                            Long Beach
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="card events">
+                <img class="card-img-top" src="retreat.jpg" alt="Card image
+                    cap">
+                <div class="card-body">
+                    <h5 class="card-title">Go Away</h5>
+                    <p class="card-text">Be with total strangers and pay to do
+                        it.</p>
+                    <span>
+                        $50 |
+                        <span>
+                            Long Beach
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="card events">
+                <img class="card-img-top" src="therapy.jpg" alt="Card image
+                    cap">
+                <div class="card-body">
+                    <h5 class="card-title">Therapy Trial</h5>
+                    <p class="card-text">If you are looking at this then you
+                        need it.</p>
+                    <span>
+                        $50 |
+                        <span>
+                            Long Beach
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="card events">
+                <img class="card-img-top" src="training.jpg" alt="Card image
+                    cap">
+                <div class="card-body">
+                    <h5 class="card-title">Train with Someone</h5>
+                    <p class="card-text">Choo Choo</p>
+                    <span>
+                        $50 |
+                        <span>
+                            Long Beach
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+        <!--Bottom Bar-->
+        <ul class="nav justify-content-center">
+            <li class="nav-item bottom">
+                <a class="nav-link active" href="contact.html">Contact
+                    Us</a>
+            </li>
+            <li class="nav-item bottom">
+                <a class="nav-link"
+                    href="https://www.craigslist.org/about/privacy.policy">Privacy</a>
+            </li>
+            <li class="nav-item bottom">
+                <a class="nav-link"
+                    href="https://www.craigslist.org/about/terms.of.use.en">Terms</a>
+            </li>
+            <li class="nav-item bottom">
+                <a class="nav-link"
+                    href="https://www.craigslist.org/about/craigslist_is_hiring">Craigslist
+                    Jobs</a>
+            </li>
+            <li class="nav-item bottom">
+                <a class="nav-link" href="help.html">Help</a>
+            </li>
+        </ul>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    </body>
+
+</html>
